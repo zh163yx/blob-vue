@@ -12,7 +12,7 @@ body,
 }
 .header{
     height: 150px;
-    width: calc(100% - 100px);
+    width: 100%;
 }
 </style>
 
@@ -34,12 +34,17 @@ body,
                     <el-menu-item index="3">
                         首页
                     </el-menu-item>
+                    <el-submenu style="float:right" >
+                        <template slot="title"> <i class="el-icon-user-solid"></i></template>
+                        <el-menu-item>
+                            个人中心
+                        </el-menu-item>
+                    </el-submenu> 
                 </el-menu>
-
+                
+                
             </el-header>
-            <el-aside class="headerAside">
-                Aside content
-            </el-aside>
+            
 
         </el-container>
  
