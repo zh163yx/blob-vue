@@ -10,6 +10,16 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+        path: '/Register',
+        name: 'Register',
+        component: (resolve) => require(['../components/Register.vue'], resolve)
+    },
+    {
+        path: '/Login',
+        name: 'Login',
+        component: (resolve) => require(['../components/Login.vue'], resolve)
     }
   ]
 })

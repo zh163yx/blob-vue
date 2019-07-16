@@ -3,6 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+//引入Element
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI)
+//引入jquery
+import jquery from '../static/jquery-1.10.2.js'
+
+window.jquery = window.$ = jquery
 
 Vue.config.productionTip = false
 
