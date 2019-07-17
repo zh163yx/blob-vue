@@ -11,15 +11,14 @@ body,
     width: 100px !important;
 }
 .header{
-    height: 150px;
+    height: 100px;
     width: 100%;
 }
 </style>
 
 <template>
 <div class="father" @click="ShowAnimate">
-    <el-container  class="container"  direction='vertical'>
-        <el-container direction='horizontal'>
+    <el-container  class="container"  direction='vertical'> 
             <el-header class="header" >
                 <el-menu mode="horizontal" default-active="0" @select="handleSelect">
                     <el-menu-item index="0">
@@ -34,9 +33,9 @@ body,
                     <el-menu-item index="3">
                         首页
                     </el-menu-item>
-                    <el-submenu style="float:right" >
+                    <el-submenu style="float:right" index='999'>
                         <template slot="title"> <i class="el-icon-user-solid"></i></template>
-                        <el-menu-item>
+                        <el-menu-item >
                             个人中心
                         </el-menu-item>
                     </el-submenu> 
@@ -44,11 +43,7 @@ body,
                 
                 
             </el-header>
-            
-
-        </el-container>
- 
-        <el-main height="">
+        <el-main>
             <router-view />
         </el-main> 
     </el-container>
