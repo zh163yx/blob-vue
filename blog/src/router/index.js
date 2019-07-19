@@ -1,6 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Router from 'vue-router' 
 import VueRouter from 'vue-router';
 
 Vue.use(Router)
@@ -9,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Index',
+      component: (resolve) => require(['../components/Index.vue'], resolve)
     },
     {
         path: '/Register',
@@ -36,6 +35,11 @@ export default new Router({
         path: '/UProfile',
         name: 'UProfile',
         component: (resolve) => require(['../components/UserProfile.vue'], resolve)
+    },
+    {
+        path: '/BList',
+        name: 'BList',
+        component: (resolve) => require(['../components/ShowBlogList.vue'], resolve)
     }
   ]
 })

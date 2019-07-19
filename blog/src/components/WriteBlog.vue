@@ -14,9 +14,21 @@
             <mavon-editor class="editor"  :ishljs = "true" :toolbars="markdownOption" ref=md @imgAdd="$imgAdd" @imgDel="$imgDel" v-model="notebook"/>
          </el-main>
          <el-footer height="40px">
-            <el-button class="btn" type="success" @click="submit">发布</el-button>
+            <el-button class="btn" type="success" @click="dialogShow = true">发布</el-button>
             <el-button class="btn" type="info" @click="save">保存</el-button>
          </el-footer>
+         <el-dialog :close-on-click-modal='false' width="350px" :visible.sync="dialogShow">
+            <el-form> 
+                <el-form-item label="发布类型" label-width="80px">
+                <el-select v-model="blogData" placeholder="选择类型" style="width:120px">
+                    <el-option label="区域一" value="shanghai"></el-option>
+                    <el-option label="区域二" value="beijing"></el-option>
+                </el-select> 
+                <el-button type="primary" @click="submit">确 定</el-button>
+                </el-form-item>
+             
+            </el-form>
+        </el-dialog>
     </el-container>
         
       
@@ -27,7 +39,7 @@ export default {
    prop:[],
    data() {
        return {
-           markdownOption: {
+            markdownOption: {
                 bold: true, // 粗体
                 italic: true, // 斜体
                 header: true, // 标题
@@ -62,9 +74,9 @@ export default {
                 subfield: true, // 单双栏模式
                 preview: true, // 预览
             },
-
-            notebook: "#### how to use mavonEditor in nuxt.js"
-       
+            notebook: "#### how to use mavonEditor in nuxt.js",
+            dialogShow:false,
+            blogData:null,
        
        }
    },
@@ -95,9 +107,10 @@ export default {
         },
         submit(){
             console.log(this.notebook)
+            this.dialogShow = false;
         },
         save(){
-
+            console.log('ss')
         }
    },
 }

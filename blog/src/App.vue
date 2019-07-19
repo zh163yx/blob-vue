@@ -14,28 +14,25 @@ body,
     height: 100px;
     width: 100%;
 }
+.el-main{
+    padding:10px !important;
+}
 </style>
 
 <template>
 <div class="father" @click="ShowAnimate">
     <el-container  class="container"  direction='vertical'> 
             <el-header class="header" >
-                <el-menu mode="horizontal" default-active="0" @select="handleSelect">
-                    <el-menu-item index="0">
+                <el-menu mode="horizontal" default-active="0" :router='true' >
+                    <el-menu-item index="/">
                         首页
-                    </el-menu-item>
-                    <el-menu-item index="1">
-                        首页
-                    </el-menu-item>
-                    <el-menu-item index="2">
-                        首页
-                    </el-menu-item>
-                    <el-menu-item index="3">
-                        首页
-                    </el-menu-item>
+                    </el-menu-item> 
+                    <el-menu-item index="/BList">
+                        博客
+                    </el-menu-item> 
                     <el-submenu style="float:right" index='999'>
                         <template slot="title"> <i class="el-icon-user-solid"></i></template>
-                        <el-menu-item >
+                        <el-menu-item index="/UProfile">
                             个人中心
                         </el-menu-item>
                     </el-submenu> 
@@ -82,10 +79,7 @@ export default {
                 }
             ); //设置动画
         },
-        handleSelect(key, keyPath) {
-            console.log(key);
-            console.log(keyPath);
-        }
+         
     }
 };
 </script>
