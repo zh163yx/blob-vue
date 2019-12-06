@@ -40,6 +40,10 @@ export default new Router({
         path: '/BList',
         name: 'BList',
         component: (resolve) => require(['../components/ShowBlogList.vue'], resolve)
+    },{
+      path:'/other/gettxt',
+      name:'gettxt',
+      component: (resolve)=> require(["../other/GetTxt.vue"],resolve)
     }
   ]
 })
